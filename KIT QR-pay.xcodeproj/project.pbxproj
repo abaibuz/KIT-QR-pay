@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A89044BD2762448000F3A907 /* Github token.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A89044BC2762448000F3A907 /* Github token.rtf */; };
 		A8A47AF72743897300C7A71B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47AF62743897300C7A71B /* AppDelegate.swift */; };
 		A8A47AF92743897300C7A71B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47AF82743897300C7A71B /* SceneDelegate.swift */; };
 		A8A47AFB2743897300C7A71B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47AFA2743897300C7A71B /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A89044BC2762448000F3A907 /* Github token.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Github token.rtf"; sourceTree = "<group>"; };
 		A8A47AF32743897300C7A71B /* KIT QR-pay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KIT QR-pay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A47AF62743897300C7A71B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8A47AF82743897300C7A71B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A8A47B0F27455AA200C7A71B /* KIT QR-pay.entitlements */,
 				A8A47B0C2743D8F000C7A71B /* checkInternetConnection.swift */,
 				A8A47B0B2743D8F000C7A71B /* QRClass.swift */,
+				A89044BC2762448000F3A907 /* Github token.rtf */,
 				A8A47AF62743897300C7A71B /* AppDelegate.swift */,
 				A8A47AF82743897300C7A71B /* SceneDelegate.swift */,
 				A8A47AFA2743897300C7A71B /* ViewController.swift */,
@@ -154,6 +157,7 @@
 			files = (
 				A8A47B032743897500C7A71B /* LaunchScreen.storyboard in Resources */,
 				A8A47B002743897500C7A71B /* Assets.xcassets in Resources */,
+				A89044BD2762448000F3A907 /* Github token.rtf in Resources */,
 				A8A47AFE2743897300C7A71B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
