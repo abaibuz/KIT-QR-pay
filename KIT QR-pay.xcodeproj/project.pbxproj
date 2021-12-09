@@ -13,6 +13,10 @@
 		A8A47AFE2743897300C7A71B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A47AFC2743897300C7A71B /* Main.storyboard */; };
 		A8A47B002743897500C7A71B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A47AFF2743897500C7A71B /* Assets.xcassets */; };
 		A8A47B032743897500C7A71B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A47B012743897500C7A71B /* LaunchScreen.storyboard */; };
+		A8A47B0D2743D8F000C7A71B /* QRClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47B0B2743D8F000C7A71B /* QRClass.swift */; };
+		A8A47B0E2743D8F000C7A71B /* checkInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47B0C2743D8F000C7A71B /* checkInternetConnection.swift */; };
+		A8A47B112745694700C7A71B /* applePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A47B102745694700C7A71B /* applePayViewController.swift */; };
+		A8A47B1627456A0500C7A71B /* WFPClient in Frameworks */ = {isa = PBXBuildFile; productRef = A8A47B1527456A0500C7A71B /* WFPClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		A8A47AFF2743897500C7A71B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8A47B022743897500C7A71B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8A47B042743897500C7A71B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8A47B0B2743D8F000C7A71B /* QRClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRClass.swift; sourceTree = "<group>"; };
+		A8A47B0C2743D8F000C7A71B /* checkInternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkInternetConnection.swift; sourceTree = "<group>"; };
+		A8A47B0F27455AA200C7A71B /* KIT QR-pay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "KIT QR-pay.entitlements"; sourceTree = "<group>"; };
+		A8A47B102745694700C7A71B /* applePayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = applePayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A47B1627456A0500C7A71B /* WFPClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 		A8A47AEA2743897300C7A71B = {
 			isa = PBXGroup;
 			children = (
+				A8A47B0A27438BB600C7A71B /* Source */,
 				A8A47AF52743897300C7A71B /* KIT QR-pay */,
 				A8A47AF42743897300C7A71B /* Products */,
 			);
@@ -56,15 +66,26 @@
 		A8A47AF52743897300C7A71B /* KIT QR-pay */ = {
 			isa = PBXGroup;
 			children = (
+				A8A47B0F27455AA200C7A71B /* KIT QR-pay.entitlements */,
+				A8A47B0C2743D8F000C7A71B /* checkInternetConnection.swift */,
+				A8A47B0B2743D8F000C7A71B /* QRClass.swift */,
 				A8A47AF62743897300C7A71B /* AppDelegate.swift */,
 				A8A47AF82743897300C7A71B /* SceneDelegate.swift */,
 				A8A47AFA2743897300C7A71B /* ViewController.swift */,
+				A8A47B102745694700C7A71B /* applePayViewController.swift */,
 				A8A47AFC2743897300C7A71B /* Main.storyboard */,
-				A8A47AFF2743897500C7A71B /* Assets.xcassets */,
 				A8A47B012743897500C7A71B /* LaunchScreen.storyboard */,
 				A8A47B042743897500C7A71B /* Info.plist */,
 			);
 			path = "KIT QR-pay";
+			sourceTree = "<group>";
+		};
+		A8A47B0A27438BB600C7A71B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A8A47AFF2743897500C7A71B /* Assets.xcassets */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +104,9 @@
 			dependencies = (
 			);
 			name = "KIT QR-pay";
+			packageProductDependencies = (
+				A8A47B1527456A0500C7A71B /* WFPClient */,
+			);
 			productName = "KIT QR-pay";
 			productReference = A8A47AF32743897300C7A71B /* KIT QR-pay.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +135,9 @@
 				Base,
 			);
 			mainGroup = A8A47AEA2743897300C7A71B;
+			packageReferences = (
+				A8A47B1427456A0500C7A71B /* XCRemoteSwiftPackageReference "WayForPay-Swift-Client" */,
+			);
 			productRefGroup = A8A47AF42743897300C7A71B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A47AFB2743897300C7A71B /* ViewController.swift in Sources */,
+				A8A47B0D2743D8F000C7A71B /* QRClass.swift in Sources */,
+				A8A47B112745694700C7A71B /* applePayViewController.swift in Sources */,
+				A8A47B0E2743D8F000C7A71B /* checkInternetConnection.swift in Sources */,
 				A8A47AF72743897300C7A71B /* AppDelegate.swift in Sources */,
 				A8A47AF92743897300C7A71B /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "KIT QR-pay/KIT QR-pay.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6J6L9WA58P;
@@ -295,6 +326,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "KIT QR-pay/KIT QR-pay.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6J6L9WA58P;
@@ -323,6 +356,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8A47B1427456A0500C7A71B /* XCRemoteSwiftPackageReference "WayForPay-Swift-Client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nerzh/WayForPay-Swift-Client";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8A47B1527456A0500C7A71B /* WFPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A47B1427456A0500C7A71B /* XCRemoteSwiftPackageReference "WayForPay-Swift-Client" */;
+			productName = WFPClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8A47AEB2743897300C7A71B /* Project object */;
 }

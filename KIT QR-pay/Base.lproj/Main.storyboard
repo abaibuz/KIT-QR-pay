@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KIT_QR_pay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QR KIT" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-UJ-1hm">
+                                <rect key="frame" x="62" y="303" width="290" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="Tdl-hG-ZMd"/>
+                                    <constraint firstAttribute="width" constant="290" id="or0-Qh-n47"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap QR-code to pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-Xv-YjW">
+                                <rect key="frame" x="110.5" y="267.5" width="193" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xeC-UJ-1hm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="55O-KO-Xu9"/>
+                            <constraint firstItem="WvS-Xv-YjW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8LZ-9Q-Ibh"/>
+                            <constraint firstItem="xeC-UJ-1hm" firstAttribute="bottom" secondItem="WvS-Xv-YjW" secondAttribute="bottom" constant="300" id="jAU-3u-5bt"/>
+                            <constraint firstItem="xeC-UJ-1hm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mlS-3x-5a7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="qrImageOutlet" destination="xeC-UJ-1hm" id="hkI-PF-ieF"/>
+                        <segue destination="uNL-w5-zYg" kind="presentation" identifier="openScannerSegue" modalPresentationStyle="fullScreen" id="Cy6-eO-l3t"/>
+                        <segue destination="nOY-nz-BLO" kind="presentation" identifier="openPaySegue" modalPresentationStyle="fullScreen" id="YRJ-j1-SZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-133.33333333333334" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9wn-Ou-9O1">
+            <objects>
+                <navigationController id="uNL-w5-zYg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xcb-NP-ond">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OmM-kc-s5G" kind="relationship" relationship="rootViewController" id="Fsl-Ls-tm0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDi-Ia-eEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741" y="119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ErY-2Y-KcJ">
+            <objects>
+                <navigationController id="nOY-nz-BLO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XQV-f0-6hJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1CQ-q0-DFW" kind="relationship" relationship="rootViewController" id="hMT-TO-461"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUH-lc-kWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741" y="844"/>
+        </scene>
+        <!--Pay-->
+        <scene sceneID="8pv-8O-4Mh">
+            <objects>
+                <viewController id="1CQ-q0-DFW" customClass="applePayViewController" customModule="KIT_QR_pay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bk1-RK-BES">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFR-wv-3Pv" userLabel="applePayButton">
+                                <rect key="frame" x="145" y="108" width="124" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="0mA-RE-a9S"/>
+                                    <constraint firstAttribute="height" constant="57" id="QzC-me-rPY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="applepay" imagePlacement="bottom" cornerStyle="small">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRY-vu-Ipq">
+                                <rect key="frame" x="74" y="189" width="51" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2q-p7-OYZ">
+                                <rect key="frame" x="74" y="219" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01C-LZ-gdU">
+                                <rect key="frame" x="74" y="248" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Akd-Kg-uuy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="01C-LZ-gdU" firstAttribute="leading" secondItem="f2q-p7-OYZ" secondAttribute="leading" id="JcE-aK-wBM"/>
+                            <constraint firstItem="01C-LZ-gdU" firstAttribute="top" secondItem="f2q-p7-OYZ" secondAttribute="bottom" constant="8" symbolic="YES" id="K3V-VM-fjk"/>
+                            <constraint firstItem="MFR-wv-3Pv" firstAttribute="centerX" secondItem="bk1-RK-BES" secondAttribute="centerX" id="KVZ-q6-ukz"/>
+                            <constraint firstItem="yRY-vu-Ipq" firstAttribute="leading" secondItem="Akd-Kg-uuy" secondAttribute="leading" constant="74" id="ObF-do-BLd"/>
+                            <constraint firstItem="f2q-p7-OYZ" firstAttribute="top" secondItem="yRY-vu-Ipq" secondAttribute="bottom" constant="9.5" id="YDG-uv-ceE"/>
+                            <constraint firstItem="Akd-Kg-uuy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yRY-vu-Ipq" secondAttribute="trailing" symbolic="YES" id="dUs-dr-wjj"/>
+                            <constraint firstItem="Akd-Kg-uuy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="01C-LZ-gdU" secondAttribute="trailing" symbolic="YES" id="kwb-qK-i0i"/>
+                            <constraint firstItem="MFR-wv-3Pv" firstAttribute="top" secondItem="Akd-Kg-uuy" secondAttribute="top" constant="20" id="pJQ-7c-BQA"/>
+                            <constraint firstItem="Akd-Kg-uuy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f2q-p7-OYZ" secondAttribute="trailing" symbolic="YES" id="tlD-7W-wZG"/>
+                            <constraint firstItem="f2q-p7-OYZ" firstAttribute="leading" secondItem="Akd-Kg-uuy" secondAttribute="leading" constant="74" id="wh5-aH-pHH"/>
+                            <constraint firstItem="yRY-vu-Ipq" firstAttribute="top" secondItem="Akd-Kg-uuy" secondAttribute="top" constant="101" id="y16-48-ujP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pay" id="ZD5-js-exH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="TV3-57-GeD">
+                            <connections>
+                                <action selector="tappedBackButton:" destination="1CQ-q0-DFW" id="UC1-12-iFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="applePayButtonOutlet" destination="MFR-wv-3Pv" id="wx2-mG-iI4"/>
+                        <outlet property="labelObject" destination="yRY-vu-Ipq" id="HMm-j8-ldE"/>
+                        <outlet property="labelPrice" destination="01C-LZ-gdU" id="d9R-AN-b9n"/>
+                        <outlet property="labelService" destination="f2q-p7-OYZ" id="L9W-Fn-5Tc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uk1-ku-ONi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653.6231884057972" y="843.75"/>
+        </scene>
+        <!--Scan to pay-->
+        <scene sceneID="wfg-XK-cb4">
+            <objects>
+                <viewController id="OmM-kc-s5G" customClass="ScannerViewController" customModule="KIT_QR_pay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOi-Eq-jDC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5It-HH-nRn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan to pay" id="oz7-bU-Edz">
+                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="b3s-KG-bWw">
+                            <connections>
+                                <action selector="tappedBackButton:" destination="OmM-kc-s5G" id="vsz-cS-Ghg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpx-bg-vgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="QR KIT" width="145" height="145"/>
+        <image name="applepay" width="100" height="100"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
